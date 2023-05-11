@@ -1,0 +1,155 @@
+Phase 1
+
+DiscoverOradea infoPage management system:
+Java Web Application used for managing tourist infoPage
+One window for CRUD operations on Hotels (Name, address, contact , phoneNumber , price): allows the viewing of all Hotels;
+   adding a new hotel; deleting an existing hotel and updating an existing hotel
+One window for CRUD operations on Attractions (Name, address, opening_times, contact , Adult_price , children_price  , distance):
+   allows the viewing of all the attractions; adding a new attraction; deleting an existing attraction and updating an existing attraction
+One window for Restaurants (Name, address, time_table, contact, distance ):
+   allows the viewing of all the restaurants; adding a new restaurant ; deleting and updating the description of a restaurant;
+
+
+   Phase 2
+
+      //////////////////////////////////////////////////////////////////////////////
+
+      - IMPLEMENT HOTEL CREATION
+       As an admin I should be able to add a new hotel with the following details: (Name, address, contact , phoneNumber , price). If the creation process is successful
+      the system will allocate a unique id to the new hotel.
+          The system will validate the following data:
+                  - name to be not blank and not empty
+                  - address to be not blank and not empty
+                  - contact to be not blank and not empty
+                  - phoneNumber to be not blank and not empty
+      If the creation process fails the system will show an appropriate error message.
+
+      - IMPLEMENT VIEW ALL HOTELS
+      As an admin/guest I should be able to view all the existing hotels from the system.
+              I should be able to view a list where each line will contain: Name, address, contact , phoneNumber , price.
+
+      - IMPLEMENT VIEW HOTEL BY ID
+      As an admin I should be able to view all the details of an existing hotel by id. If the given id is found in the system, the following details
+      will be shown on the screen: id, Name, address, contact , phoneNumber , price. If the given id is not found in the system an appropriate error message
+      will be shown on the screen.
+
+      - IMPLEMENT UPDATE HOTEL
+      As a admin I should be able to update the details of an existing hotel.
+      If the hotel is found by id in the system, I should be able to update the following data:
+                  - name
+                  - address
+                  - contact
+                  - phoneNumber
+      The system will validate the following data:
+                  - name to be not blank and not empty
+                  - address to be not blank and not empty
+                  - contact to be not blank and not empty
+                  - phoneNumber to be not blank and not empty
+                  ----- --- ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PRICE to be not blank and not empty ??????????????????????????????????????---------
+          If the update process fails the system will show an appropriate error message.
+      If the vet is not found by id in the system an appropriate error message will be shown.
+
+      - IMPLEMENT DELETE HOTEL
+      As an admin I should be able to delete an existing hotel by id from the system.
+      If the given id is found in the system the hotel will be deleted and a message
+      will be shown on the screen.
+      If the given id is not found in the system an appropriate error message will be shown on the screen.
+
+      //////////////////////////////////////////////////////////////////////////////
+
+      - IMPLEMENT ATTRACTIONS CREATION
+       As an admin I should be able to add a new attraction with the following details: Name, address, opening_times, contact , Adult_price , children_price , distance. If the creation process is successful
+      the system will allocate a unique id to the new attraction.
+          The system will validate the following data:
+                  - name to be not blank and not empty
+                  - address to be not blank and not empty, not to be in the future
+                  - opening_times to be not blank and not empty
+                  - contact to be not blank and not empty
+                  - distance to be not blank and not empty
+      If the creation process fails the system will show an appropriate error message.
+
+      - IMPLEMENT VIEW ALL ATTRACTIONS
+      As a user/admin I should be able to view all the existing attractions from the system.
+              I should be able to view a list where each line will contain: Name, address, opening_times, contact , Adult_price , children_price , distance.
+
+      - IMPLEMENT VIEW ATTRACTION BY ID
+      As an admin I should be able to view all the details of an existing attraction by id. If the given id is found in the system, the following details
+      will be shown on the screen: id, Name, address, opening_times, contact , Adult_price , children_price , distance. If the given id is not found in the system an appropriate error message
+      will be shown on the screen.
+
+      - IMPLEMENT UPDATE ATTRACTIONS
+      As an admin I should be able to update the details of an existing attraction.
+      If the attraction is found by id in the system, I should be able to update the following data:
+                  - name
+                  - address
+                  - opening_times
+                  - contact
+                  - Adult_price
+                  - children_price
+                  - distance
+      The system will validate the following data:
+                  - name to be not blank and not empty
+                  - address to be not blank and not empty
+                  - opening_times to be not blank and not empty
+                  - contact to be not blank and not empty
+                  - Adult_price to be not blank and not empty
+                  - children_price to be not blank and not empty
+                  - distance to be not blank and not empty
+          If the update process fails the system will show an appropriate error message.
+      If the attraction is not found by id in the system an appropriate error message will be shown.
+
+      - IMPLEMENT DELETE ATTRACTION
+      As an admin I should be able to delete and existing attraction by id from the system.
+      If the given id is found in the system the attraction will be deleted and a message
+      will be shown on the screen.
+      If the given id is not found in the system an appropriate error message will be shown on the screen.
+
+      //////////////////////////////////////////////////////////////////////////////
+
+      - IMPLEMENT CREATE RESTAURANT
+      As an admin I should be able to add a new consult with the following details: Name, address, opening_hours, contact , distance. If the creation process is successful
+         the system will allocate a unique id to the new consult.
+             The system will validate the following data:
+                     - name to be not blank and not empty and to be present in the system
+                     - address id to be not blank and not empty and to be present in the system
+                     - opening_hours to be not blank and not empty
+                     - contact to be not blank and not empty
+                     - distance to be not blank and not empty
+                     ----------------------- !!!!!!!!!!!!!!!!!!!!!!!!! restaurant specific !!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------
+         If the creation process fails the system will show an appropriate error message.
+
+      - IMPLEMENT VIEW ALL RESTAURANTS
+         As a admin/user I should be able to view all the existing restaurants from the system.
+                 I should be able to view a list where each line will contain: Name, address, opening_hours, contact, distance.
+
+      - IMPLEMENT VIEW RESTAURANT BY ID
+            As an admin I should be able to view all the details of an existing restaurant by id. If the given id is found in the system, the following details
+            will be shown on the screen:  Name, address, opening_hours, contact , distance.
+            If the given id is not found in the system an appropriate error message
+            will be shown on the screen.
+
+      - IMPLEMENT UPDATE RESTAURANT
+         As an admin I should be able to update the details of an existing restaurant.
+         If the restaurant is found by id in the system, I should be able to update the following data:
+                     - name
+                     - contact
+                     - opening_hours
+                     - distance
+         The system will validate the following data:
+                     - name to be not blank and not empty
+                     - contact to be not blank and not empty
+                     - opening_hours to be not blank and not empty
+                     - distance to be not blank and not empty
+             If the update process fails the system will show an appropriate error message.
+         If the consult is not found by id in the system an appropriate error message will be shown.
+
+      - IMPLEMENT DELETE RESTAURANT
+               As an admin I should be able to delete an existing restaurant by id from the system.
+               If the given id is found in the system the restaurant will be deleted and a message
+               will be shown on the screen.
+               If the given id is not found in the system an appropriate error message will be shown on the screen.
+
+
+
+      //////////////////////////////////////////////////////////////////////////////
+
