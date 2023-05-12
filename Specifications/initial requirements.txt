@@ -34,7 +34,7 @@ One window for Restaurants (Name, address, time_table, contact, distance ):
       will be shown on the screen.
 
       - IMPLEMENT UPDATE HOTEL
-      As a admin I should be able to update the details of an existing hotel.
+      As an admin I should be able to update the details of an existing hotel.
       If the hotel is found by id in the system, I should be able to update the following data:
                   - name
                   - address
@@ -108,7 +108,7 @@ One window for Restaurants (Name, address, time_table, contact, distance ):
 
       - IMPLEMENT CREATE RESTAURANT
       As an admin I should be able to add a new consult with the following details: Name, address, opening_hours, contact , distance. If the creation process is successful
-         the system will allocate a unique id to the new consult.
+         the system will allocate a unique id to the new restaurant.
              The system will validate the following data:
                      - name to be not blank and not empty and to be present in the system
                      - address id to be not blank and not empty and to be present in the system
@@ -119,7 +119,7 @@ One window for Restaurants (Name, address, time_table, contact, distance ):
          If the creation process fails the system will show an appropriate error message.
 
       - IMPLEMENT VIEW ALL RESTAURANTS
-         As a admin/user I should be able to view all the existing restaurants from the system.
+         As an admin/user I should be able to view all the existing restaurants from the system.
                  I should be able to view a list where each line will contain: Name, address, opening_hours, contact, distance.
 
       - IMPLEMENT VIEW RESTAURANT BY ID
