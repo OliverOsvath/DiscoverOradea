@@ -31,10 +31,6 @@ public class Attraction {
     @Column(name = "distance")
     private double distance;
 
-    @ManyToOne
-    @JoinColumns(value = )
-    private Hotel hotel;
-
     public Attraction() {
     }
 
