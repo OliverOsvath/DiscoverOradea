@@ -1,6 +1,6 @@
 package com.sda.discover.oradea.service;
 
-import com.sda.discover.oradea.Model.Hotel;
+import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.repository.HotelRepository;
 
 

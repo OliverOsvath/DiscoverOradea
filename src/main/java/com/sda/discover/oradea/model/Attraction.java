@@ -1,4 +1,4 @@
-package com.sda.discover.oradea.Model;
+package com.sda.discover.oradea.model;
 
 public class Attraction {
     private Long id;
