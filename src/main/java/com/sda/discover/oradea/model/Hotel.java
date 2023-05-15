@@ -36,11 +36,6 @@ public class Hotel {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "hotel")
-    private List<Attraction> attractions;
-
-    @OneToMany(mappedBy = "hotel")
-    private List<Restaurant> restaurants;
 
     public Hotel() {
     }
