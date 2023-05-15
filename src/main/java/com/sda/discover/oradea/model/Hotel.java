@@ -1,14 +1,46 @@
 package com.sda.discover.oradea.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import java.util.List;
+
+@Entity
+@Table(name = "hotel")
 public class Hotel {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @NotNull(message = "Type a Name")
+    @NotBlank(message = "Type a Name")
+    @Column(name = "name")
     private String name;
+    @NotNull(message = "Please type a address")
+    @NotBlank(message = "Please type a address")
+    @Column(name = "address")
     private String address;
+    @NotNull(message = "Please enter contact details")
+    @NotBlank(message = "Please enter contact details")
+    @Column(name = "contact")
     private String contact;
+    @NotNull(message = "Please enter phone number")
+    @NotBlank(message = "Please enter phone number")
+    @Column(name = "phone_number")
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "hotel")
+    private List<Attraction> attractions;
+
+    @OneToMany(mappedBy = "hotel")
+    private List<Restaurant> restaurants;
 
     public Hotel() {
     }

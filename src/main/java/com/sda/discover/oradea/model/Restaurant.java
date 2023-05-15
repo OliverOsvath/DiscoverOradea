@@ -1,12 +1,32 @@
 package com.sda.discover.oradea.model;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "restaurant")
 public class Restaurant {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @NotBlank(message = "Please input a name")
+    @NotNull(message = "Please input a name")
+    @Column(name = "name")
     private String name;
+    @NotBlank(message = "Please input a address")
+    @NotNull(message = "Please input a address")
+    @Column(name = "address")
     private String address;
+    @NotBlank(message = "Please input opening hours")
+    @NotNull(message = "Please input opening hours")
+    @Column(name = "opening_hours")
     private String openingHours;
+    @Column(name = "contact")
     private String contact;
+    @Column(name = "distance")
     private String distance;
 
     public Restaurant() {

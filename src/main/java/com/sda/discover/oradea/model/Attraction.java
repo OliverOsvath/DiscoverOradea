@@ -1,14 +1,39 @@
 package com.sda.discover.oradea.model;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+
+@Entity
+@Table(name = "attraction")
 public class Attraction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @NotNull(message = "Type a name")
+    @NotBlank(message = "Type a name")
+    @Column(name = "name")
     private String name;
+    @NotNull(message = "Please type a address")
+    @NotBlank(message = "Please type a address")
+    @Column(name = "address")
     private String address;
+    @Column(name = "opening_hours")
     private int openingHours;
+    @Column(name = "contact")
     private String contact;
+    @Column(name = "adult_price")
     private double adultPrice;
+    @Column(name = "price_for_children")
     private double priceForChildren;
+    @Column(name = "distance")
     private double distance;
+
+    @ManyToOne
+    @JoinColumns(value = )
+    private Hotel hotel;
 
     public Attraction() {
     }
