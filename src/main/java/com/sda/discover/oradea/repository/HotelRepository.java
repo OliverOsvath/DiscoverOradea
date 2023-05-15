@@ -1,6 +1,6 @@
 package com.sda.discover.oradea.repository;
 
-import com.sda.discover.oradea.Model.Hotel;
+import com.sda.discover.oradea.model.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,23 +1,24 @@
-package com.sda.discover.oradea.Model;
+package com.sda.discover.oradea.model;
 
-public class Restaurant {
+import jakarta.persistence.Id;
 
+public class Hotel {
+    @Id
     private Long id;
     private String name;
     private String address;
-    private String openingHours;
     private String contact;
-    private String distance;
+    private String phoneNumber;
 
-    public Restaurant() {
+    public Hotel() {
     }
 
-    public Restaurant(String name, String address, String openingHours, String contact, String distance) {
+    public Hotel( String name, String address, String contact, String phoneNumber) {
+
         this.name = name;
         this.address = address;
-        this.openingHours = openingHours;
         this.contact = contact;
-        this.distance = distance;
+        this.phoneNumber = phoneNumber;
     }
 
     public Long getId() {
@@ -33,50 +34,48 @@ public class Restaurant {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getAddress() {
+
         return address;
     }
 
     public void setAddress(String address) {
+
         this.address = address;
     }
 
-    public String getOpeningHours() {
-        return openingHours;
-    }
-
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
-    }
-
     public String getContact() {
+
         return contact;
     }
 
     public void setContact(String contact) {
+
         this.contact = contact;
     }
 
-    public String getDistance() {
-        return distance;
+    public String getPhoneNumber() {
+
+        return phoneNumber;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public void setPhoneNumber(String phoneNumber) {
+
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-        return "Restaurant{" +
+        return "Hotel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", openingHours='" + openingHours + '\'' +
                 ", contact='" + contact + '\'' +
-                ", distance='" + distance + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }
