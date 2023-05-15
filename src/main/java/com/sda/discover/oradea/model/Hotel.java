@@ -1,16 +1,12 @@
 package com.sda.discover.oradea.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
-import java.util.List;
+
 
 @Entity
 @Table(name = "hotel")
@@ -35,6 +31,10 @@ public class Hotel {
     @NotBlank(message = "Please enter phone number")
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "hotel_poi_id")
+    private HotelPOI hotelPOI;
 
 
     public Hotel() {
