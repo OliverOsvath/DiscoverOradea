@@ -34,7 +34,15 @@ public class Attraction {
     public Attraction() {
     }
 
-    public Attraction(String name, String address, int openingHours, String contact, double adultPrice, double priceForChildren, double distance) {
+    public Attraction(
+            String name,
+            String address,
+            int openingHours,
+            String contact,
+            double adultPrice,
+            double priceForChildren,
+            double distance
+    ) {
         this.name = name;
         this.address = address;
         this.openingHours = openingHours;

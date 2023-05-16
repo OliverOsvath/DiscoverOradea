@@ -32,6 +32,9 @@ public class Hotel {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "price_from")
+    private double priceFrom;
+
     @ManyToOne
     @JoinColumn(name = "hotel_poi_id")
     private HotelPOI hotelPOI;
@@ -40,12 +43,13 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel( String name, String address, String contact, String phoneNumber) {
+    public Hotel( String name, String address, String contact, String phoneNumber, double priceFrom) {
 
         this.name = name;
         this.address = address;
         this.contact = contact;
         this.phoneNumber = phoneNumber;
+        this.priceFrom = priceFrom;
     }
 
     public Long getId() {
@@ -95,6 +99,14 @@ public class Hotel {
         this.phoneNumber = phoneNumber;
     }
 
+    public double getPriceFrom() {
+        return priceFrom;
+    }
+
+    public void setPriceFrom(double priceFrom) {
+        this.priceFrom = priceFrom;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
@@ -103,6 +115,7 @@ public class Hotel {
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", priceFrom='" + priceFrom + '\'' +
                 '}';
     }
 }

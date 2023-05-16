@@ -40,12 +40,13 @@ One window for Restaurants (Name, address, time_table, contact, distance ):
                   - address
                   - contact
                   - phoneNumber
+                  - priceFrom
       The system will validate the following data:
                   - name to be not blank and not empty
                   - address to be not blank and not empty
                   - contact to be not blank and not empty
                   - phoneNumber to be not blank and not empty
-                  ----- --- ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PRICE to be not blank and not empty ??????????????????????????????????????---------
+                  - priceFrom to be not blank and not empty
           If the update process fails the system will show an appropriate error message.
       If the vet is not found by id in the system an appropriate error message will be shown.
 
