@@ -26,18 +26,15 @@ public class Restaurant {
     private String openingHours;
     @Column(name = "contact")
     private String contact;
-    @Column(name = "distance")
-    private String distance;
 
     public Restaurant() {
     }
 
-    public Restaurant(String name, String address, String openingHours, String contact, String distance) {
+    public Restaurant(String name, String address, String openingHours, String contact) {
         this.name = name;
         this.address = address;
         this.openingHours = openingHours;
         this.contact = contact;
-        this.distance = distance;
     }
 
     public Long getId() {
@@ -80,14 +77,6 @@ public class Restaurant {
         this.contact = contact;
     }
 
-    public String getDistance() {
-        return distance;
-    }
-
-    public void setDistance(String distance) {
-        this.distance = distance;
-    }
-
     @Override
     public String toString() {
         return "Restaurant{" +
@@ -96,7 +85,7 @@ public class Restaurant {
                 ", address='" + address + '\'' +
                 ", openingHours='" + openingHours + '\'' +
                 ", contact='" + contact + '\'' +
-                ", distance='" + distance + '\'' +
+
                 '}';
     }
 }

@@ -13,10 +13,10 @@ public class Admin {
     @Column(name = "id")
     private Long id;
 
-    @NotNull(message = "Please enter your name")
-    @NotBlank(message = "Please enter your name")
-    @Column(name = "name")
-    private String name;
+    @NotNull(message = "Please enter your email")
+    @NotBlank(message = "Please enter your email")
+    @Column(name = "email")
+    private String email;
 
     @NotNull
     @NotBlank
@@ -26,8 +26,8 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(String name, String password) {
-        this.name = name;
+    public Admin(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 
@@ -39,12 +39,12 @@ public class Admin {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String name) {
+        this.email = name;
     }
 
     public String getPassword() {
@@ -59,7 +59,7 @@ public class Admin {
     public String toString() {
         return "Admin{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

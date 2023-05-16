@@ -27,6 +27,7 @@ public class Guest {
     @Column(name = "nationality")
     private String nationality;
 
+
     public Guest() {
     }
 

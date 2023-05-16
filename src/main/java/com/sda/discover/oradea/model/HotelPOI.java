@@ -19,11 +19,22 @@ public class HotelPOI {
     @JoinColumn(name = "attraction_id")
     private Attraction attraction;
 
+    @Column(name = "attraction_distance")
+    private String attractionDistance;
+
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
+    @Column(name = "restaurant_distance")
+    private String restaurantDistance;
+
     public HotelPOI() {
+    }
+
+    public HotelPOI(String attractionDistance, String restaurantDistance) {
+        this.attractionDistance = attractionDistance;
+        this.restaurantDistance = restaurantDistance;
     }
 
     public Long getId() {
@@ -34,10 +45,19 @@ public class HotelPOI {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "HotelPOI{" +
-                "id=" + id +
-                '}';
+    public String getAttractionDistance() {
+        return attractionDistance;
+    }
+
+    public void setAttractionDistance(String attractionDistance) {
+        this.attractionDistance = attractionDistance;
+    }
+
+    public String getRestaurantDistance() {
+        return restaurantDistance;
+    }
+
+    public void setRestaurantDistance(String restaurantDistance) {
+        this.restaurantDistance = restaurantDistance;
     }
 }

@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.util.List;
 
 
 @Entity
@@ -33,17 +34,16 @@ public class Hotel {
     private String phoneNumber;
 
     @Column(name = "price_from")
-    private double priceFrom;
+    private Double priceFrom;
 
-    @ManyToOne
-    @JoinColumn(name = "hotel_poi_id")
-    private HotelPOI hotelPOI;
+    @OneToMany(mappedBy = "hotel")
+    private List<HotelPOI> hotelPOIs;
 
 
     public Hotel() {
     }
 
-    public Hotel( String name, String address, String contact, String phoneNumber, double priceFrom) {
+    public Hotel( String name, String address, String contact, String phoneNumber, Double priceFrom) {
 
         this.name = name;
         this.address = address;
@@ -99,11 +99,11 @@ public class Hotel {
         this.phoneNumber = phoneNumber;
     }
 
-    public double getPriceFrom() {
+    public Double getPriceFrom() {
         return priceFrom;
     }
 
-    public void setPriceFrom(double priceFrom) {
+    public void setPriceFrom(Double priceFrom) {
         this.priceFrom = priceFrom;
     }
 

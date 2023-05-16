@@ -21,15 +21,14 @@ public class Attraction {
     @Column(name = "address")
     private String address;
     @Column(name = "opening_hours")
-    private int openingHours;
+    private String openingHours;
     @Column(name = "contact")
     private String contact;
     @Column(name = "adult_price")
-    private double adultPrice;
+    private Double adultPrice;
     @Column(name = "price_for_children")
-    private double priceForChildren;
-    @Column(name = "distance")
-    private double distance;
+    private Double priceForChildren;
+
 
     public Attraction() {
     }
@@ -37,11 +36,10 @@ public class Attraction {
     public Attraction(
             String name,
             String address,
-            int openingHours,
+            String openingHours,
             String contact,
-            double adultPrice,
-            double priceForChildren,
-            double distance
+            Double adultPrice,
+            Double priceForChildren
     ) {
         this.name = name;
         this.address = address;
@@ -49,7 +47,7 @@ public class Attraction {
         this.contact = contact;
         this.adultPrice = adultPrice;
         this.priceForChildren = priceForChildren;
-        this.distance = distance;
+
     }
 
     public Long getId() {
@@ -76,11 +74,11 @@ public class Attraction {
         this.address = address;
     }
 
-    public int getOpeningHours() {
+    public String getOpeningHours() {
         return openingHours;
     }
 
-    public void setOpeningHours(int openingHours) {
+    public void setOpeningHours(String openingHours) {
         this.openingHours = openingHours;
     }
 
@@ -92,28 +90,20 @@ public class Attraction {
         this.contact = contact;
     }
 
-    public double getAdultPrice() {
+    public Double getAdultPrice() {
         return adultPrice;
     }
 
-    public void setAdultPrice(double adultPrice) {
+    public void setAdultPrice(Double adultPrice) {
         this.adultPrice = adultPrice;
     }
 
-    public double getPriceForChildren() {
+    public Double getPriceForChildren() {
         return priceForChildren;
     }
 
-    public void setPriceForChildren(double priceForChildren) {
+    public void setPriceForChildren(Double priceForChildren) {
         this.priceForChildren = priceForChildren;
-    }
-
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(double distance) {
-        this.distance = distance;
     }
 
     @Override
@@ -126,7 +116,6 @@ public class Attraction {
                 ", contact='" + contact + '\'' +
                 ", adultPrice=" + adultPrice +
                 ", priceForChildren=" + priceForChildren +
-                ", distance=" + distance +
                 '}';
     }
 }
