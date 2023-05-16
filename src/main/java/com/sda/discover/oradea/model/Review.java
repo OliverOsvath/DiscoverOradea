@@ -1,6 +1,7 @@
 package com.sda.discover.oradea.model;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "review")

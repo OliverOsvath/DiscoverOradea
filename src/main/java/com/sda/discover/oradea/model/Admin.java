@@ -1,8 +1,10 @@
 package com.sda.discover.oradea.model;
 
+import com.sda.discover.oradea.model.constant.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "admin")
@@ -23,12 +25,16 @@ public class Admin {
     @Column(name = "password")
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_role")
+    private UserRole userRole;
     public Admin() {
     }
 
-    public Admin(String email, String password) {
+    public Admin(String email, String password, UserRole userRole) {
         this.email = email;
         this.password = password;
+        this.userRole = userRole;
     }
 
     public Long getId() {
@@ -53,6 +59,14 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     @Override

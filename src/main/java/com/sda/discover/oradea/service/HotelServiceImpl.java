@@ -2,6 +2,7 @@ package com.sda.discover.oradea.service;
 
 import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.repository.HotelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,32 +17,10 @@ public class HotelServiceImpl implements HotelService{
         this.hotelRepository = hotelRepository;
     }
 
-    @Override
-    public Hotel createHotel(Hotel hotel) {
-        hotelRepository.create(hotel);
-        return hotel;
-    }
 
     @Override
-    public Hotel updateHotel(Long hotelId, Hotel hotel) {
-        hotelRepository.update(hotel);
-        return hotel;
-    }
-
-    @Override
-    public boolean deleteHotel(Long hotelId) {
-        hotelRepository.delete(hotelId);
-        return false;
-    }
-
-    @Override
-    public Optional<Hotel> getHotelById(Long hotelId) {
-        Optional<Hotel> foundHotel = hotelRepository.findHotelById(hotelId);
-        return foundHotel;
-    }
-
-    @Override
-    public List<Hotel> getAllHotels() {
-        return hotelRepository.findAll();
+    public Hotel create(String name, String address, String contact, String phoneNumber, Double priceFrom) {
+        Hotel hotel = new Hotel(name, address, contact, phoneNumber, priceFrom);
+        return hotelRepository.save(hotel);
     }
 }

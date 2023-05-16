@@ -3,7 +3,7 @@ package com.sda.discover.oradea.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+
 
 @Entity
 @Table(name = "attraction")

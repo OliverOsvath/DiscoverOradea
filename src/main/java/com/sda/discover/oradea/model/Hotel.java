@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import java.util.List;
 
 
