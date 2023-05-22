@@ -5,9 +5,23 @@
 
 <body>
 <div th:replace="fragments/header :: header"></div>
-<h1>Hello</h1>
-<h2>......</h2>
-<h3>......</h3>
+
+<h1>
+    <figure class="figure1">
+    <img th:src="@{/img/img1.jpg}" class="figure-img1" alt="...">
+    <figcaption class="figure-caption">Test 1</figcaption>
+    </figure>
+</h1>
+<h2><figure class="figure2">
+    <img th:src="@{/img/img2.jpg}" class="figure-img1" alt="...">
+    <figcaption class="figure-caption">Test 2</figcaption>
+</figure></h2>
+<h3>
+    <figure class="figure3">
+        <img th:src="@{/img/img3.jpg}" class="figure-img1" alt="...">
+        <figcaption class="figure-caption">Test 3</figcaption>
+    </figure>
+</h3>
 <h4>......</h4>
 <h2>......</h2>
 <h3>......</h3>
