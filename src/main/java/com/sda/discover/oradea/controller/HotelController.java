@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Optional;
 
 @Controller
 public class HotelController {
@@ -47,6 +50,20 @@ public class HotelController {
 
     }
 
+    @GetMapping("/hotel/{hotelId}")
+    public String getHotelById(@PathVariable(value = "hotelId") int hotelId, Model model){
+        Optional<Hotel> optionalHotel = hotelService.findById(hotelId);
+        if(optionalHotel.isEmpty()){
+            return "error";
+        }
+        Hotel hotel = optionalHotel.get();
+        model.addAttribute("hotel", hotel);
+        return "viewHotel";
+    }
 
+    @GetMapping("/contactHotel")
+    public String contactHotelGet(Model model) {
+        return "contactHotel";
+    }
 
 }

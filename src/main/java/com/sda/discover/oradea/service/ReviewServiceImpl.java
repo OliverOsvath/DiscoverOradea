@@ -1,11 +1,8 @@
 package com.sda.discover.oradea.service;
 
-import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.model.Review;
-import com.sda.discover.oradea.repository.HotelRepository;
 import com.sda.discover.oradea.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -20,8 +17,8 @@ public class ReviewServiceImpl implements ReviewService{
 
 
     @Override
-    public Review create() {
-        Review review = new Review();
+    public Review create(String comment, int score) {
+        Review review = new Review(comment, score);
         return reviewRepository.save(review);
     }
     @Override

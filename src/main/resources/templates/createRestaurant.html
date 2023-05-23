@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header-css"></head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Restaurant</h3></div>
+                <div class="card-body">
+                    <form th:action="@{/createRestaurant}" th:object="${restaurant}" method="post">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" th:field="*{name}" id="name" name="name" type="text" placeholder="Enter restaurant name" />
+                                    <label for="name">Enter restaurant name</label>
+                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input class="form-control" th:field="*{address}" id="address" name="address" type="text" placeholder="Enter restaurant address" />
+                                    <label for="address">Enter address</label>
+                                    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input class="form-control" th:field="*{openingHours}" id="openingHours" name="openingHours" type="text" placeholder="Enter restaurant opening hours" />
+                                    <label for="openingHours">Enter opening hours</label>
+                                    <span th:if="${#fields.hasErrors('openingHours')}" th:errors="*{openingHours}" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" th:field="*{contact}" id="contact" name="contact" type="text" placeholder="Enter hotel contact" />
+                            <label for="contact">Enter contact</label>
+                            <span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" class="text-danger"></span>
+                        </div>
+                        <a><hr class="dropdown-divider" /></a>
+                        <div class="mt-4 mb-0">
+                            <div class="d-grid">
+                                <input type="submit" value="Save Restaurant" class="btn btn-primary btn-block" th:href="@{/index}">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

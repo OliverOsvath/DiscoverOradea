@@ -8,7 +8,7 @@ import java.util.Optional;
 
 
 public interface ReviewService {
-    Review create();
+    Review create(String comment, int score);
 
     void save(Review review);
 
