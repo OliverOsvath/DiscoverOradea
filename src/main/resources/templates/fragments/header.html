@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css"
           th:href="@{/webjars/font-awesome/5.0.10/web-fonts-with-css/css/fontawesome-all.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
     <title>Discover Oradea</title>
 </head>
 
@@ -24,22 +25,23 @@
                     </form>
                     <ul  class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{viewHotel.html}">Hotels</a>
+                            <a class="nav-link" th:href="@{viewHotel}">Hotels</a>
+
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/login}">Attractions</a>
+                            <a class="nav-link" th:href="@{/viewAttraction}">Attractions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/register}">Restaurants</a>
+                            <a class="nav-link" th:href="@{/viewRestaurant}">Restaurants</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/register}">Reviews</a>
+                            <a class="nav-link" th:href="@{/viewReview}">Reviews</a>
                         </li>
                         <button type="button" class="btn btn-primary position-relative">Admin</button>
                     </ul>
                 </div>
             </div>
         </nav>
-        <header class="bg-dark py-5" style="color: #0c63e4">
+        <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder" style="color: #a52834">Discover Oradea</h1>

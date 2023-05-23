@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>View Hotel</title>
+  <title>View Review</title>
   <link rel="icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
@@ -17,14 +17,14 @@
 <body>
 <div th:insert="fragments/menu :: menu"></div>
 
-<!--================Single Hotel Area =================-->
-<div class="hotel_image_area">
+<!--================Single Review Area =================-->
+<div class="review_image_area">
   <div class="container">
-    <div th:object="${hotel}" class="row hotel">
+    <div th:object="${review}" class="row review">
       <div class="col-lg-6">
-        <div class="card-hotel__img">
-          <img class="card-img" th:src="@{/img/img1.jpg}" alt="aaaa">
-          <ul class="card-hotel__imgOverlay">
+        <div class="card-review__img">
+          <img class="card-img" th:src="" alt="">
+          <ul class="card-review__imgOverlay">
             <li><button><i class="ti-search"></i></button></li>
             <li><button><i class="restaurant"></i></button></li>
             <li><button><i class="attraction"></i></button></li>
@@ -32,12 +32,12 @@
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
-        <div class="s_hotel_text">
-          <h3 th:text="${hotel.name}"></h3>
+        <div class="s_review_text">
+          <h3 th:text="${review.name}"></h3>
           <ul class="list">
-            <li><a class="active" href="#"><span>Hotels</span> : <span th:text="${hotel.hotels}"></span></a></li>
+            <li><a class="active" href="#"><span>Reviews</span> : <span th:text="${review.reviews}"></span></a></li>
           </ul>
-          <p th:text="${hotel.description}"></p>
+          <p th:text="${review.description}"></p>
           <div class="card_area d-flex align-items-center">
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
@@ -47,6 +47,6 @@
     </div>
   </div>
 </div>
-<!--================End Single Hotel Area =================-->
+<!--================End Single Review Area =================-->
 </body>
 </html>
