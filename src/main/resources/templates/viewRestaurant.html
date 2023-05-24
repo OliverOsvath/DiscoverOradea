@@ -15,18 +15,23 @@
         <div class="card-restaurant__img">
           <img class="card-img" th:src="@{/img/img1.jpg}" alt="data">
           <ul class="card-restaurant__imgOverlay">
-            <button class="ti-search">Address</button>
-            <button class="hotel">Opening Hours</button>
-            <button class="attraction">Contact</button>
+            <li><button class="address" th:text="${restaurant.address}"></button></li>
+            <li><button class="openingHours" th:text="${restaurant.openingHours}"></button></li>
+            <li><button class="contact" th:text="${restaurant.contact}"></button></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_restaurant_text">
 
-            <a class="active" href="#"><span>Hotels</span> : <span th:text="${hotels}"></span></a>
-            <a class="active" href="#"><span>Attractions</span> : <span th:text="${restaurant.restaurants}"></span></a>
-          <p th:text="${restaurant.description}"></p>
+            <a class="active" th:href="@{/index}">
+              <span>Hotels</span>
+            </a>
+
+            <a class="active" href="#">
+              <span>Attractions</span>
+            </a>
+
           <div class="card_area d-flex align-items-center">
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>

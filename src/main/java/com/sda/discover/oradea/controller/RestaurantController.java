@@ -1,6 +1,6 @@
 package com.sda.discover.oradea.controller;
 
-import com.sda.discover.oradea.model.Attraction;
+
 import com.sda.discover.oradea.model.Restaurant;
 import com.sda.discover.oradea.service.RestaurantService;
 import jakarta.validation.Valid;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 import java.util.Optional;
 
 @Controller
@@ -21,7 +22,13 @@ public class RestaurantController {
     public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
+    @ModelAttribute("restaurant")
+    public Restaurant getRestaurant(){
+        return new Restaurant();
+    }
 
+    @GetMapping("/viewRestaurant")
+    public String showViewRestaurantPage(Restaurant restaurant){ return "viewRestaurant";}
 
 
     @GetMapping("/createRestaurant")
@@ -44,10 +51,10 @@ public class RestaurantController {
 
         restaurantService.save(restaurant);
 
-        return "redirect:/createRestaurant?success";
+        return "redirect:/index";
 
     }
-    @GetMapping("/restaurant/{restaurantId}")
+    @GetMapping("/viewRestaurant/{restaurantId}")
     public String getRestaurantById(@PathVariable(value = "restaurantId") int restaurantId, Model model){
         Optional<Restaurant> optionalRestaurant = restaurantService.findById(restaurantId);
         if(optionalRestaurant.isEmpty()){

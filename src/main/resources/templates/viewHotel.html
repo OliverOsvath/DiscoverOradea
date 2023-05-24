@@ -24,19 +24,21 @@
         <div class="card-hotel__img">
           <img class="card-img" th:src="@{/img/img1.jpg}" alt="data">
           <ul class="card-hotel__imgOverlay">
-            <li><i class="ti-search">Address : 31 Mihai Viteazul</i></li>
-            <li><i class="restaurant">Contact</i></li>
-            <li><i class="attraction">Phone Number</i></li>
-            <li><i class="attraction">Price from</i></li>
+            <li><i class="address" th:text="${hotel.address}"></i></li>
+            <li><i class="contact" th:text="${hotel.contact}"></i></li>
+            <li><i class="phoneNumber" th:text="${hotel.phoneNumber}"></i></li>
+            <li><i class="priceFrom" th:text="${hotel.priceFrom}"></i></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_hotel_text">
 
-            <a class="active" href="#"><span type="button" class="btn btn-primary">Restaurants</span>
-
-            <a class="active" href="#"><span type="button" class="btn btn-primary">Attractions</span>
+            <a class="active" th:href="@{/viewRestaurant}">
+              <span type="button" class="btn btn-primary">Restaurants</span></a>
+            <a class="active" href="#">
+              <span type="button" class="btn btn-primary">Attractions
+              </span></a>
 
 
           <div class="card_area d-flex align-items-center">
