@@ -1,6 +1,7 @@
 package com.sda.discover.oradea.controller;
 
 
+import com.sda.discover.oradea.controller.dto.BaseReviewDto;
 import com.sda.discover.oradea.model.Review;
 import com.sda.discover.oradea.service.ReviewService;
 import jakarta.validation.Valid;
@@ -23,8 +24,8 @@ public class ReviewController {
     }
     @GetMapping("/createReview")
     public String showCreateReviewPage(Model model){
-        Review review = new Review();
-        model.addAttribute("review", review);
+        BaseReviewDto baseReviewDto = new BaseReviewDto();
+        model.addAttribute("baseUserDto", baseReviewDto);
         return "createReview";
     }
     @PostMapping("/createReview")
@@ -39,7 +40,7 @@ public class ReviewController {
 
         reviewService.save(review);
 
-        return "redirect:/createReview?success";
+        return "redirect:/viewReview";
 
     }
     @GetMapping("/review/{reviewId}")

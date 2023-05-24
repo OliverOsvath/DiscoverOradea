@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -40,20 +41,20 @@ public class HotelController {
             Hotel hotel,
             BindingResult result
     ) {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "/createHotel";
         }
 
         hotelService.save(hotel);
 
-        return "redirect:/createHotel?success";
+        return "redirect:/index";
 
     }
 
-    @GetMapping("/hotel/{hotelId}")
-    public String getHotelById(@PathVariable(value = "hotelId") int hotelId, Model model){
+    @GetMapping("/viewHotel/{hotelId}")
+    public String getHotelById(@PathVariable(value = "hotelId") int hotelId, Model model) {
         Optional<Hotel> optionalHotel = hotelService.findById(hotelId);
-        if(optionalHotel.isEmpty()){
+        if (optionalHotel.isEmpty()) {
             return "error";
         }
         Hotel hotel = optionalHotel.get();
@@ -64,6 +65,14 @@ public class HotelController {
     @GetMapping("/contactHotel")
     public String contactHotelGet(Model model) {
         return "contactHotel";
+    }
+
+    @GetMapping(value = {"/","/index","/home"})
+    public String showIndexWithAllHotels(Model model) {
+        List<Hotel> hotels = hotelService.findAll();
+
+        model.addAttribute("hotels", hotels);
+        return "index";
     }
 
 }

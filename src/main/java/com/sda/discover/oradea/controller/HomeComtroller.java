@@ -18,13 +18,18 @@ public class HomeComtroller {
 
     @Autowired
     private ReviewService reviewService;
+    @GetMapping("/viewHotel")
+    public String showViewHotelPage(Hotel hotel){
+        return "viewHotel";
+    }
 
-    @GetMapping(value = {"/","/index","/home"})
+   /* @GetMapping(value = {"/","/index","/home"})
     public String showIndexPage(){
         return "index";
     }
 
 
+*/
 
 
 }
