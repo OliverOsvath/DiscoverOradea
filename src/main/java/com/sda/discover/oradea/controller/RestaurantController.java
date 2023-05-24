@@ -65,10 +65,4 @@ public class RestaurantController {
         return "viewRestaurant";
     }
 
-    @GetMapping("/contactRestaurant")
-    public String contactRestaurantGet(Model model) {
-        return "contactRestaurant";
-    }
-
-
 }

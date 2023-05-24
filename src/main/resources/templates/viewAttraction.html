@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>View Attraction</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.png">
-  <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
-  <link rel="stylesheet" href="/vendors/linericon/style.css">
-  <link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="/vendors/nice-select/nice-select.css">
-  <link rel="stylesheet" href="/vendors/nouislider/nouislider.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: header-css}"></head>
+
 <body>
-<div th:insert="fragments/menu :: menu"></div>
+<div th:replace="~{fragments/header :: header}"></div>
 
 <!--================Single Attraction Area =================-->
 <div class="attraction_image_area">
   <div class="container">
     <div th:object="${attraction}" class="row attraction">
       <div class="col-lg-6">
+        <h3 th:text="${attraction.name}"></h3>
         <div class="card-attraction__img">
-          <img class="card-img" th:src="" alt="">
+          <img class="card-img" th:src="@{/img/img1.jpg}" alt="">
           <ul class="card-attraction__imgOverlay">
-            <li><button><i class="ti-search"></i></button></li>
-            <li><button><i class="restaurant"></i></button></li>
-            <li><button><i class="hotel"></i></button></li>
+            <li><button><i class="address" th:src="${attraction.getAddress()}"></i></button></li>
+            <li><button><i class="openingHours" th:src="${attraction.getOpeningHours()}"></i></button></li>
+            <li><button><i class="contact" th:src="${attraction.getContact()}"></i></button></li>
+            <li><button><i class="adultPrice" th:src="${attraction.getAdultPrice()}"></i></button></li>
+            <li><button><i class="priceForChildren" th:src="${attraction.getPriceForChildren()}"></i></button></li>
+
           </ul>
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_attraction_text">
-          <h3 th:text="${attraction.name}"></h3>
-          <ul class="list">
-            <li><a class="active" href="#"><span>Attractions</span> : <span th:text="${attraction.attractions}"></span></a></li>
-          </ul>
-          <p th:text="${attraction.description}"></p>
+
+            <a class="active" th:href="@{/index}">
+              <span type="button" class="btn btn-primary">Hotels</span>
+            </a>
+
+            <a class="active" th:href="@{/viewRestaurant}">
+              <span type="button" class="btn btn-primary">Restaurants</span>
+            </a>
+
           <div class="card_area d-flex align-items-center">
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
@@ -48,5 +45,7 @@
   </div>
 </div>
 <!--================End Single Attraction Area =================-->
+<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>

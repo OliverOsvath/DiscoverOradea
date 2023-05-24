@@ -10,7 +10,11 @@ import java.util.Optional;
 public interface ReviewService {
     Review create(String comment, int score);
 
-    void save(Review review);
+    void save(String guestFirstName,
+              String guestLastName,
+              String guestNationality,
+              String reviewComment,
+              int reviewScore);
 
     void delete(int id);
 

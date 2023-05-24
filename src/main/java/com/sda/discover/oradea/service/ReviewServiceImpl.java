@@ -1,6 +1,8 @@
 package com.sda.discover.oradea.service;
 
+import com.sda.discover.oradea.model.Guest;
 import com.sda.discover.oradea.model.Review;
+import com.sda.discover.oradea.repository.GuestRepository;
 import com.sda.discover.oradea.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -10,9 +12,11 @@ import java.util.Optional;
 public class ReviewServiceImpl implements ReviewService{
 
     private final ReviewRepository reviewRepository;
+    private final GuestRepository guestRepository;
 
-    public ReviewServiceImpl(ReviewRepository reviewRepository) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository, GuestRepository guestRepository) {
         this.reviewRepository = reviewRepository;
+        this.guestRepository = guestRepository;
     }
 
 
@@ -31,7 +35,15 @@ public class ReviewServiceImpl implements ReviewService{
         return reviewRepository.findById(id);
     }
     @Override
-    public void save(Review review) {
+    public void save(String guestFirstName,
+                     String guestLastName,
+                     String guestNationality,
+                     String reviewComment,
+                     int reviewScore) {
+        Guest guest = new Guest(guestFirstName,guestLastName,guestNationality);
+        guestRepository.save(guest);
+        Review review = new Review(reviewComment, reviewScore);
+        review.setGuest(guest);
         reviewRepository.save(review);
     }
 

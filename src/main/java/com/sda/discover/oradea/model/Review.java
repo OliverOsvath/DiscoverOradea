@@ -20,6 +20,9 @@ public class Review {
     @JoinColumn(name = "guest_id")
     private Guest guest;
 
+    public Review() {
+    }
+
     public Review(String comment, int score) {
         this.comment = comment;
         this.score = score;
@@ -47,5 +50,13 @@ public class Review {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Guest getGuest() {
+        return guest;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
     }
 }

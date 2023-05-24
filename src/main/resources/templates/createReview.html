@@ -13,39 +13,39 @@
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Review</h3></div>
                 <div class="card-body">
-                    <form th:action="@{/createReview}" th:object="${baseUserDto}" method="post">
+                    <form th:action="@{/createReview}" th:object="${review}" method="post">
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" th:field="*{firstName}" id="firstName" name="firstName" type="text" placeholder="Enter your first name" />
+                                    <input class="form-control" th:field="*{guestFirstName}" id="firstName" name="firstName" type="text" placeholder="Enter your first name" />
                                     <label for="firstName">Enter your first name</label>
-                                    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger"></span>
+                                    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{guestFirstName}" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input class="form-control" th:field="*{lastName}" id="lastName" name="lastName" type="text" placeholder="Enter your last name" />
+                                    <input class="form-control" th:field="*{guestLastName}" id="lastName" name="lastName" type="text" placeholder="Enter your last name" />
                                     <label for="lastName">Enter your last name</label>
-                                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger"></span>
+                                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{guestLastName}" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input class="form-control" th:field="*{nationality}" id="nationality" name="nationality" type="text" placeholder="Enter your nationality" />
+                                    <input class="form-control" th:field="*{guestNationality}" id="nationality" name="nationality" type="text" placeholder="Enter your nationality" />
                                     <label for="nationality">Enter your nationality</label>
-                                    <span th:if="${#fields.hasErrors('nationality')}" th:errors="*{nationality}" class="text-danger"></span>
+                                    <span th:if="${#fields.hasErrors('nationality')}" th:errors="*{guestNationality}" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" th:field="*{comment}" id="comment" name="comment" type="text" placeholder="Enter comment" />
+                            <input class="form-control" th:field="*{reviewComment}" id="comment" name="comment" type="text" placeholder="Enter comment" />
                             <label for="comment">Enter comment</label>
-                            <span th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="text-danger"></span>
+                            <span th:if="${#fields.hasErrors('comment')}" th:errors="*{reviewComment}" class="text-danger"></span>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" th:field="*{score}" id="score" name="score" type="text" placeholder="Enter score" />
+                            <input class="form-control" th:field="*{reviewScore}" id="score" name="score" type="text" placeholder="Enter score" />
                             <label for="score">Enter score</label>
-                            <span th:if="${#fields.hasErrors('score')}" th:errors="*{score}" class="text-danger"></span>
+                            <span th:if="${#fields.hasErrors('score')}" th:errors="*{reviewScore}" class="text-danger"></span>
                         </div>
                         <a><hr class="dropdown-divider" /></a>
                         <div class="mt-4 mb-0">

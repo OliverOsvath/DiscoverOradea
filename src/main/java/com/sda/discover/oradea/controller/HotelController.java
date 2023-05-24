@@ -62,10 +62,6 @@ public class HotelController {
         return "viewHotel";
     }
 
-    @GetMapping("/contactHotel")
-    public String contactHotelGet(Model model) {
-        return "contactHotel";
-    }
 
     @GetMapping(value = {"/","/index","/home"})
     public String showIndexWithAllHotels(Model model) {
