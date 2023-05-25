@@ -9,27 +9,27 @@
 <!--================Single Restaurant Area =================-->
 <div class="restaurant_image_area">
   <div class="container">
-    <div th:object="${restaurant}" class="row restaurant">
+    <div class="row restaurant" th:each="restaurant : ${restaurants}">
       <div class="col-lg-6">
         <h3 th:text="${restaurant.name}"></h3>
         <div class="card-restaurant__img">
           <img class="card-img" th:src="@{/img/img1.jpg}" alt="data">
           <ul class="card-restaurant__imgOverlay">
-            <li><button class="address" th:text="${restaurant.address}"></button></li>
-            <li><button class="openingHours" th:text="${restaurant.openingHours}"></button></li>
-            <li><button class="contact" th:text="${restaurant.contact}"></button></li>
+            <li class="address" th:text="${restaurant.address}"></li>
+            <li class="openingHours" th:text="${restaurant.openingHours}"></li>
+            <li class="contact" th:text="${restaurant.contact}"></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_restaurant_text">
-            <a class="active" th:href="@{/index}">
-              <span type="button" class="btn btn-primary">Hotels</span>
-            </a>
 
-            <a class="active" href="#">
-              <span type="button" class="btn btn-primary">Attractions</span>
-            </a>
+          <a class="active" th:href="@{/index}">
+            <span type="button" class="btn btn-primary">Hotels</span></a>
+
+          <a class="active" th:href="@{/viewAttraction}">
+            <span type="button" class="btn btn-primary">Attractions</span></a>
+
           <div class="card_area d-flex align-items-center">
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
@@ -39,6 +39,7 @@
     </div>
   </div>
 </div>
+
 <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 

@@ -22,11 +22,6 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-  /*  @ModelAttribute("hotel")
-    public Hotel getHotel() {
-        return new Hotel();
-    }*/
-
     @GetMapping("/createHotel")
     public String showCreateHotelPage(Model model) {
         Hotel hotel = new Hotel();

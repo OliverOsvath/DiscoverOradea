@@ -9,31 +9,28 @@
 <!--================Single Attraction Area =================-->
 <div class="attraction_image_area">
   <div class="container">
-    <div th:object="${attraction}" class="row attraction">
+    <div class="row attraction" th:each="attraction : ${attractions}">
       <div class="col-lg-6">
         <h3 th:text="${attraction.name}"></h3>
         <div class="card-attraction__img">
-          <img class="card-img" th:src="@{/img/img1.jpg}" alt="">
+          <img class="card-img" th:src="@{/img/img1.jpg}" alt="data">
           <ul class="card-attraction__imgOverlay">
-            <li><button><i class="address" th:src="${attraction.getAddress()}"></i></button></li>
-            <li><button><i class="openingHours" th:src="${attraction.getOpeningHours()}"></i></button></li>
-            <li><button><i class="contact" th:src="${attraction.getContact()}"></i></button></li>
-            <li><button><i class="adultPrice" th:src="${attraction.getAdultPrice()}"></i></button></li>
-            <li><button><i class="priceForChildren" th:src="${attraction.getPriceForChildren()}"></i></button></li>
-
+            <li class="address" th:text="${attraction.address}"></li>
+            <li class="openingHours" th:text="${attraction.openingHours}"></li>
+            <li class="contact" th:text="${attraction.contact}"></li>
+            <li class="adultPrice" th:text="${attraction.adultPrice}"></li>
+            <li class="priceForChildren" th:text="${attraction.priceForChildren}"></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_attraction_text">
 
-            <a class="active" th:href="@{/index}">
-              <span type="button" class="btn btn-primary">Hotels</span>
-            </a>
+          <a class="active" th:href="@{/index}">
+            <span type="button" class="btn btn-primary">Hotels</span></a>
 
-            <a class="active" th:href="@{/viewRestaurant}">
-              <span type="button" class="btn btn-primary">Restaurants</span>
-            </a>
+          <a class="active" th:href="@{/viewRestaurant}">
+              <span type="button" class="btn btn-primary">Restaurants</span></a>
 
           <div class="card_area d-flex align-items-center">
             <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>

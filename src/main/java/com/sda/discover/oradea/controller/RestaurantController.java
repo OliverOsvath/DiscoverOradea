@@ -1,6 +1,5 @@
 package com.sda.discover.oradea.controller;
 
-
 import com.sda.discover.oradea.model.Restaurant;
 import com.sda.discover.oradea.service.RestaurantService;
 import jakarta.validation.Valid;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -22,14 +21,11 @@ public class RestaurantController {
     public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
+
     @ModelAttribute("restaurant")
-    public Restaurant getRestaurant(){
+    public Restaurant getRestaurant() {
         return new Restaurant();
     }
-
-    @GetMapping("/viewRestaurant")
-    public String showViewRestaurantPage(Restaurant restaurant){ return "viewRestaurant";}
-
 
     @GetMapping("/createRestaurant")
     public String showCreateRestaurantPage(Model model) {
@@ -45,19 +41,20 @@ public class RestaurantController {
             Restaurant restaurant,
             BindingResult result
     ) {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "/createRestaurant";
         }
 
         restaurantService.save(restaurant);
 
-        return "redirect:/index";
+        return "redirect:/viewRestaurant";
 
     }
+
     @GetMapping("/viewRestaurant/{restaurantId}")
-    public String getRestaurantById(@PathVariable(value = "restaurantId") int restaurantId, Model model){
+    public String getRestaurantById(@PathVariable(value = "restaurantId") int restaurantId, Model model) {
         Optional<Restaurant> optionalRestaurant = restaurantService.findById(restaurantId);
-        if(optionalRestaurant.isEmpty()){
+        if (optionalRestaurant.isEmpty()) {
             return "error";
         }
         Restaurant restaurant = optionalRestaurant.get();
@@ -65,4 +62,10 @@ public class RestaurantController {
         return "viewRestaurant";
     }
 
+    @GetMapping("/viewRestaurant")
+    public String showAllRestaurants(Model model) {
+        List<Restaurant> restaurants = restaurantService.findAll();
+        model.addAttribute("restaurants", restaurants);
+        return "viewRestaurant";
+    }
 }

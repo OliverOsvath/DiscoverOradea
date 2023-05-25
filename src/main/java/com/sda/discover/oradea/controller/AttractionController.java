@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -27,10 +28,6 @@ public class AttractionController {
     public Attraction getAttraction(){
         return new Attraction();
     }
-
-    @GetMapping("/viewAttraction")
-    public String showViewAttractionPage(Attraction attraction){ return "viewAttraction";}
-
 
 
     @GetMapping("/createAttraction")
@@ -53,7 +50,7 @@ public class AttractionController {
 
         attractionService.save(attraction);
 
-        return "redirect:/index";
+        return "redirect:/viewAttraction";
 
     }
 
@@ -65,6 +62,12 @@ public class AttractionController {
         }
         Attraction attraction = optionalAttraction.get();
         model.addAttribute("attraction", attraction);
+        return "viewAttraction";
+    }
+    @GetMapping("/viewAttraction")
+    public String showAllAttractions(Model model) {
+        List<Attraction> attractions = attractionService.findAll();
+        model.addAttribute("attractions", attractions);
         return "viewAttraction";
     }
 }

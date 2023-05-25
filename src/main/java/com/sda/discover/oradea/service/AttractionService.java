@@ -2,6 +2,7 @@ package com.sda.discover.oradea.service;
 
 
 import com.sda.discover.oradea.model.Attraction;
+import com.sda.discover.oradea.model.Restaurant;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,4 +22,6 @@ public interface AttractionService {
     Optional<Attraction> findById(int id);
 
     void delete(int id);
+
+    List<Attraction> showAllAttractions();
 }

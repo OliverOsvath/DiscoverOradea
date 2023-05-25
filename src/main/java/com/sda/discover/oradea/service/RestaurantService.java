@@ -1,6 +1,5 @@
 package com.sda.discover.oradea.service;
 
-import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.model.Restaurant;
 
 import java.util.List;
@@ -13,7 +12,7 @@ public interface RestaurantService {
     void save(Restaurant restaurant);
 
     void delete(int id);
-
+    List<Restaurant> showAllRestaurants();
     List<Restaurant> findAll();
     Optional<Restaurant> findById(int id);
 }

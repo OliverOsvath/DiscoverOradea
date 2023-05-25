@@ -23,13 +23,7 @@ public class HomeComtroller {
         return "viewHotel";
     }
 
-   /* @GetMapping(value = {"/","/index","/home"})
-    public String showIndexPage(){
-        return "index";
-    }
 
-
-*/
 
 
 }

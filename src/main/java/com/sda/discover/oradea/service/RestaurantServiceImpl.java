@@ -1,8 +1,6 @@
 package com.sda.discover.oradea.service;
 
-import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.model.Restaurant;
-import com.sda.discover.oradea.repository.HotelRepository;
 import com.sda.discover.oradea.repository.RestaurantRepository;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +39,10 @@ public class RestaurantServiceImpl implements RestaurantService{
     @Override
     public void delete(int id) {
         restaurantRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Restaurant> showAllRestaurants() {
+        return restaurantRepository.findAll();
     }
 }

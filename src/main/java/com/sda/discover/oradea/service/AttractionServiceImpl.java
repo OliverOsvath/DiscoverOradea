@@ -41,4 +41,8 @@ public class AttractionServiceImpl implements AttractionService{
     public void delete(int id){
         attractionRepository.deleteById(id);
     }
+    @Override
+    public List<Attraction> showAllAttractions() {
+        return attractionRepository.findAll();
+    }
 }
