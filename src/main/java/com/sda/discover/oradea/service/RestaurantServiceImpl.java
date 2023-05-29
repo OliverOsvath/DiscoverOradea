@@ -4,6 +4,7 @@ import com.sda.discover.oradea.model.Restaurant;
 import com.sda.discover.oradea.repository.RestaurantRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +32,18 @@ public class RestaurantServiceImpl implements RestaurantService{
     public Optional<Restaurant> findById(int id) {
         return restaurantRepository.findById(id);
     }
+
+    @Override
+    public List<Restaurant> search(String value) {
+        List<Restaurant> searchResult = new ArrayList<>();
+        for(Restaurant restaurant : searchResult){
+            if(restaurant.getName().contains(value)){
+                searchResult.add(restaurant);
+            }
+        }
+        return searchResult;
+    }
+
     @Override
     public void save(Restaurant restaurant) {
         restaurantRepository.save(restaurant);

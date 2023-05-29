@@ -22,8 +22,9 @@
   <div class="container">
     <div th:object="${review}" class="row review">
       <div class="col-lg-6">
+        <h3 th:text="${review.name}"></h3>
         <div class="card-review__img">
-          <img class="card-img" th:src="" alt="">
+          <img class="card-img" alt="data">
           <ul class="card-review__imgOverlay">
             <li><button><i class="ti-search"></i></button></li>
             <li><button><i class="restaurant"></i></button></li>
@@ -33,7 +34,7 @@
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_review_text">
-          <h3 th:text="${review.name}"></h3>
+
           <ul class="list">
             <li><a class="active" href="#"><span>Reviews</span> : <span th:text="${review.reviews}"></span></a></li>
           </ul>

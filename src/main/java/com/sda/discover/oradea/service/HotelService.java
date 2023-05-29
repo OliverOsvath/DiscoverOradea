@@ -17,4 +17,7 @@ public interface HotelService{
 
     List<Hotel> findAll();
     Optional<Hotel> findById(int id);
+
+    List<Hotel> search(String value);
+
 }

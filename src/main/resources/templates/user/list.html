@@ -1,0 +1,66 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header :: head"></head>
+
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+<div class="container content">
+    <br/>
+    <br/>
+    <div class="row">
+        <a class="button-add-user-employee " th:href="@{/register}">
+            <button type="button" class="btn btn-primary">Add Admin</button>
+        </a>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <form method="GET" action="#">
+                <div class="input-group">
+                    <div class="form-outline">
+                        <input type="search" id="search" name="search" class="form-control" style="width: 300px;"
+                               placeholder="Search"
+                               th:value="${search}"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                    <a type="button" class="btn btn-outline-primary" th:href="@{/admins}">Clear</a>
+                </div>
+            </form>
+        </div>
+
+        <table class="table table-responsive table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+
+                <th>E-mail</th>
+
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="admin: ${admins}">
+                <td th:text="${admin.id}"></td>
+                <td th:text="${user.email}"></td>
+
+                <td>
+                    <a th:href="@{/save-update-admin/{id}(id=${admin.id})}" type="button" class="btn btn-outline-primary btn-block" style="display: block">Edit</a>
+                    <a th:href="@{/delete-admin/{id}(id=${admin.id})}" type="button" class="btn btn-outline-danger btn-block" style="display: block">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

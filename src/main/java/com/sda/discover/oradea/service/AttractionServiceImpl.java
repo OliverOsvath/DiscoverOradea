@@ -4,6 +4,7 @@ import com.sda.discover.oradea.model.Attraction;
 import com.sda.discover.oradea.repository.AttractionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,5 +45,17 @@ public class AttractionServiceImpl implements AttractionService{
     @Override
     public List<Attraction> showAllAttractions() {
         return attractionRepository.findAll();
+    }
+
+    @Override
+    public List<Attraction> search(String value) {
+        List<Attraction> searchResult = new ArrayList<>();
+        for(Attraction attraction : searchResult){
+            if(attraction.getName().contains(value)){
+                searchResult.add(attraction);
+            }
+        }
+
+        return searchResult;
     }
 }

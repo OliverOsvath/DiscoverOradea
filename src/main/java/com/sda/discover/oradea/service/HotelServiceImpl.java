@@ -4,6 +4,7 @@ import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.repository.HotelRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +32,18 @@ public class HotelServiceImpl implements HotelService{
     public Optional<Hotel> findById(int id) {
         return hotelRepository.findById(id);
     }
+
+    @Override
+    public List<Hotel> search(String value) {
+        List<Hotel> searchResult = new ArrayList<>();
+        for(Hotel hotel : searchResult){
+            if(hotel.getName().contains(value)){
+                searchResult.add(hotel);
+            }
+        }
+        return searchResult;
+    }
+
     @Override
     public void save(Hotel hotel) {
         hotelRepository.save(hotel);

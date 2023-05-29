@@ -15,4 +15,6 @@ public interface RestaurantService {
     List<Restaurant> showAllRestaurants();
     List<Restaurant> findAll();
     Optional<Restaurant> findById(int id);
+
+    List<Restaurant> search(String value);
 }

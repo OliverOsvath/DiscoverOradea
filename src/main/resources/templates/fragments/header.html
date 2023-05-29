@@ -24,13 +24,13 @@
                         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
                             <div class="input-group">
                                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-primary" id="btnNavbarSearch" type="button" onclick="search()"><i class="fas fa-search"></i></button>
                             </div>
                         </form>
                         <li class="nav-item"><a class="nav-link" th:href="@{/index}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" th:href="@{/viewRestaurant}">Restaurant</a></li>
                         <li class="nav-item"><a class="nav-link" th:href="@{/viewAttraction}">Attractions</a></li>
-                        <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/viewReview}">Reviews</a></li>
 
                     </ul>
                 </div>
@@ -45,6 +45,7 @@
             </div>
         </header>
     </div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 
 

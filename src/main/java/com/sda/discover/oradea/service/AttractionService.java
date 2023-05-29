@@ -24,4 +24,6 @@ public interface AttractionService {
     void delete(int id);
 
     List<Attraction> showAllAttractions();
+
+    List<Attraction> search(String value);
 }

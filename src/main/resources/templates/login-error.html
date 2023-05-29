@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error page</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" th:href="@{/styles.css}" />
+</head>
+<body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
+
+<h1>Login Error</h1>
+
+
+<a href="login.html" th:href="@{/loginPage}">Try Again</a>
+<a href="index.html" th:href="@{/}">Home</a>
+
+
+</body>
+</html>

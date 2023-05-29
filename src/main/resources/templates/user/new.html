@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header :: head"></head>
+
+<body>
+
+<header th:insert="fragments/header :: header"></header>
+<div class="container content">
+    <section class="pb-4">
+        <div class="bg-white border rounded-5">
+            <section class="w-100 p-4" style="background-color: #eee; border-radius: .5rem .5rem 0 0;">
+                <div class="row">
+                    <div class="col-md-6 offset-3">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <br/>
+
+                                        <form method="POST" th:action="@{/register}" th:object="${createUserForm}">
+
+                                            <input type="hidden" th:field="*{id}">
+
+
+
+                                            <fieldset>
+
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">Password</label>
+                                                    <input type="password" th:field="*{password}"  class="form-control" id="password" name="pswd1"
+                                                           aria-describedby="passwordHelpInline">
+                                                    <div class="col-auto">
+                                                        <div id="passwordHelpInline" class="form-text">
+                                                            Password must be between 8-20 characters long.
+                                                        </div>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid password.
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="retypepassword" class="form-label">Retype password</label>
+                                                    <input type="password" class="form-control" name="pswd2"
+                                                           id="retypepassword" aria-describedby="retypePasswordHelpInline">
+                                                    <div class="col-auto">
+                                                        <div id="retypePasswordHelpInline" class="form-text">
+                                                            Password must be between 8-20 characters long.
+                                                        </div>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid password.
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">E-mail</label>
+                                                <input type="email" th:field="*{email}" class="form-control" id="email"
+                                                       aria-describedby="validEmailHelpInline" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid email.
+                                                </div>
+                                            </div
+                                            <br/>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
