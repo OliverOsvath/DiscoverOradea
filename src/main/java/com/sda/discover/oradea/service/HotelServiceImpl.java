@@ -36,7 +36,7 @@ public class HotelServiceImpl implements HotelService{
     @Override
     public List<Hotel> search(String value) {
         List<Hotel> searchResult = new ArrayList<>();
-        for(Hotel hotel : searchResult){
+        for(Hotel hotel : hotelRepository.findAll()){
             if(hotel.getName().contains(value)){
                 searchResult.add(hotel);
             }

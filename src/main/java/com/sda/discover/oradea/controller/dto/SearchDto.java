@@ -7,8 +7,16 @@ public class SearchDto {
     }
 
     public SearchDto(String value) {
+
         this.value = value;
     }
+
+
+
+    public SearchDto(String name, String s) {
+
+    }
+
 
     public String getValue() {
         return value;

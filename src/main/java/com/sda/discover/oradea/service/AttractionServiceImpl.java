@@ -50,7 +50,7 @@ public class AttractionServiceImpl implements AttractionService{
     @Override
     public List<Attraction> search(String value) {
         List<Attraction> searchResult = new ArrayList<>();
-        for(Attraction attraction : searchResult){
+        for(Attraction attraction : attractionRepository.findAll()){
             if(attraction.getName().contains(value)){
                 searchResult.add(attraction);
             }

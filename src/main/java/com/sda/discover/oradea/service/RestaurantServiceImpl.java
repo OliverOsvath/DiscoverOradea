@@ -36,7 +36,7 @@ public class RestaurantServiceImpl implements RestaurantService{
     @Override
     public List<Restaurant> search(String value) {
         List<Restaurant> searchResult = new ArrayList<>();
-        for(Restaurant restaurant : searchResult){
+        for(Restaurant restaurant : restaurantRepository.findAll()){
             if(restaurant.getName().contains(value)){
                 searchResult.add(restaurant);
             }
