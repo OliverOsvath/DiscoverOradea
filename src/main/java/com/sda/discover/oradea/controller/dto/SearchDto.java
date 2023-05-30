@@ -13,11 +13,6 @@ public class SearchDto {
 
 
 
-    public SearchDto(String name, String s) {
-
-    }
-
-
     public String getValue() {
         return value;
     }

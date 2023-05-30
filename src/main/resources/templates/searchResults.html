@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header :: header-css}"></head>
+
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+
+
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div th:each="hotel : ${hotels}" class="col-lg-6">
+                <div class="position-relative mb-5">
+                    <img class="img-fluid rounded-3 mb-3" src="/img/img1.jpg" alt="..."/>
+                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
+                       th:href="@{viewHotel/{id}(id=${hotel.id})}"
+                       th:value="${hotel}"
+                       th:text="${hotel.name}"></a>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div th:each="attraction : ${attractions}" class="col-lg-6">
+                <div class="position-relative mb-5">
+                    <img class="img-fluid rounded-3 mb-3" src="/img/img1.jpg" alt="..."/>
+                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
+                       th:href="@{viewAttraction/{id}(id=${attraction.id})}"
+                       th:value="${attraction}"
+                       th:text="${attraction.name}"></a>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div th:each="restaurant : ${restaurants}" class="col-lg-6">
+                <div class="position-relative mb-5">
+                    <img class="img-fluid rounded-3 mb-3" src="/img/img1.jpg" alt="..."/>
+                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
+                       th:href="@{viewRestaurant/{id}(id=${restaurant.id})}"
+                       th:value="${restaurant}"
+                       th:text="${restaurant.name}"></a>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>
