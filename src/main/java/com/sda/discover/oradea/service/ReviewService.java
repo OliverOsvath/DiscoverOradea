@@ -1,6 +1,5 @@
 package com.sda.discover.oradea.service;
 
-import com.sda.discover.oradea.model.Hotel;
 import com.sda.discover.oradea.model.Review;
 
 import java.util.List;
@@ -19,5 +18,6 @@ public interface ReviewService {
     void delete(int id);
 
     List<Review> findAll();
+
     Optional<Review> findById(int id);
 }

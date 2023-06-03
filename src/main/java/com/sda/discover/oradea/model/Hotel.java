@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-
 import java.util.List;
 
 
@@ -42,7 +41,7 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel( String name, String address, String contact, String phoneNumber, Double priceFrom) {
+    public Hotel(String name, String address, String contact, String phoneNumber, Double priceFrom) {
 
         this.name = name;
         this.address = address;

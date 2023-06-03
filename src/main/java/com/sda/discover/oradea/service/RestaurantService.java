@@ -12,8 +12,11 @@ public interface RestaurantService {
     void save(Restaurant restaurant);
 
     void delete(int id);
+
     List<Restaurant> showAllRestaurants();
+
     List<Restaurant> findAll();
+
     Optional<Restaurant> findById(int id);
 
     List<Restaurant> search(String value);

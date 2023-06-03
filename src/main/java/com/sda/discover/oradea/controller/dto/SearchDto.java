@@ -12,7 +12,6 @@ public class SearchDto {
     }
 
 
-
     public String getValue() {
         return value;
     }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RestaurantServiceImpl implements RestaurantService{
+public class RestaurantServiceImpl implements RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
 
@@ -20,9 +20,10 @@ public class RestaurantServiceImpl implements RestaurantService{
 
     @Override
     public Restaurant create(String name, String address, String openingHours, String contact) {
-        Restaurant restaurant = new Restaurant(name, address,openingHours, contact);
+        Restaurant restaurant = new Restaurant(name, address, openingHours, contact);
         return restaurantRepository.save(restaurant);
     }
+
     @Override
     public List<Restaurant> findAll() {
         return restaurantRepository.findAll();
@@ -36,8 +37,8 @@ public class RestaurantServiceImpl implements RestaurantService{
     @Override
     public List<Restaurant> search(String value) {
         List<Restaurant> searchResult = new ArrayList<>();
-        for(Restaurant restaurant : restaurantRepository.findAll()){
-            if(restaurant.getName().contains(value)){
+        for (Restaurant restaurant : restaurantRepository.findAll()) {
+            if (restaurant.getName().contains(value)) {
                 searchResult.add(restaurant);
             }
         }

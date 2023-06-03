@@ -58,7 +58,7 @@ public class HotelController {
     }
 
 
-    @GetMapping(value = {"/","/index","/home"})
+    @GetMapping(value = {"/", "/index", "/home"})
     public String showIndexWithAllHotels(Model model) {
         List<Hotel> hotels = hotelService.findAll();
 

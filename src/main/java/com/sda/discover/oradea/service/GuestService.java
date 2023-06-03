@@ -13,6 +13,7 @@ public interface GuestService {
     void save(Guest guest);
 
     List<Guest> findAll();
+
     Optional<Guest> findById(int id);
 
     void delete(int id);

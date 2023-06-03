@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class HotelServiceImpl implements HotelService{
+public class HotelServiceImpl implements HotelService {
 
     private final HotelRepository hotelRepository;
 
@@ -23,6 +23,7 @@ public class HotelServiceImpl implements HotelService{
         Hotel hotel = new Hotel(name, address, contact, phoneNumber, priceFrom);
         return hotelRepository.save(hotel);
     }
+
     @Override
     public List<Hotel> findAll() {
         return hotelRepository.findAll();
@@ -36,8 +37,8 @@ public class HotelServiceImpl implements HotelService{
     @Override
     public List<Hotel> search(String value) {
         List<Hotel> searchResult = new ArrayList<>();
-        for(Hotel hotel : hotelRepository.findAll()){
-            if(hotel.getName().contains(value)){
+        for (Hotel hotel : hotelRepository.findAll()) {
+            if (hotel.getName().contains(value)) {
                 searchResult.add(hotel);
             }
         }

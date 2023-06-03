@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AttractionServiceImpl implements AttractionService{
+public class AttractionServiceImpl implements AttractionService {
 
     private final AttractionRepository attractionRepository;
 
@@ -39,9 +39,10 @@ public class AttractionServiceImpl implements AttractionService{
     }
 
     @Override
-    public void delete(int id){
+    public void delete(int id) {
         attractionRepository.deleteById(id);
     }
+
     @Override
     public List<Attraction> showAllAttractions() {
         return attractionRepository.findAll();
@@ -50,8 +51,8 @@ public class AttractionServiceImpl implements AttractionService{
     @Override
     public List<Attraction> search(String value) {
         List<Attraction> searchResult = new ArrayList<>();
-        for(Attraction attraction : attractionRepository.findAll()){
-            if(attraction.getName().contains(value)){
+        for (Attraction attraction : attractionRepository.findAll()) {
+            if (attraction.getName().contains(value)) {
                 searchResult.add(attraction);
             }
         }

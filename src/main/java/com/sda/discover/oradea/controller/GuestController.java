@@ -15,6 +15,7 @@ public class GuestController {
     public GuestController(GuestService guestService) {
         this.guestService = guestService;
     }
+
     @PostMapping("/saveGuest")
     public void save(Guest guest) {
         guestService.save(guest);

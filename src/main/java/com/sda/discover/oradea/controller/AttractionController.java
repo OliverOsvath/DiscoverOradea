@@ -1,8 +1,6 @@
 package com.sda.discover.oradea.controller;
 
 import com.sda.discover.oradea.model.Attraction;
-import com.sda.discover.oradea.model.Hotel;
-import com.sda.discover.oradea.model.Restaurant;
 import com.sda.discover.oradea.service.AttractionService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -25,7 +23,7 @@ public class AttractionController {
     }
 
     @ModelAttribute("attraction")
-    public Attraction getAttraction(){
+    public Attraction getAttraction() {
         return new Attraction();
     }
 
@@ -44,7 +42,7 @@ public class AttractionController {
             Attraction attraction,
             BindingResult result
     ) {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "/createAttraction";
         }
 
@@ -55,15 +53,16 @@ public class AttractionController {
     }
 
     @GetMapping("/viewAttraction/{attractionId}")
-    public String getAttractionById(@PathVariable(value = "attractionId") int attractionId, Model model){
+    public String getAttractionById(@PathVariable(value = "attractionId") int attractionId, Model model) {
         Optional<Attraction> optionalAttraction = attractionService.findById(attractionId);
-        if(optionalAttraction.isEmpty()){
+        if (optionalAttraction.isEmpty()) {
             return "error";
         }
         Attraction attraction = optionalAttraction.get();
         model.addAttribute("attraction", attraction);
         return "viewAttraction";
     }
+
     @GetMapping("/viewAttraction")
     public String showAllAttractions(Model model) {
         List<Attraction> attractions = attractionService.findAll();

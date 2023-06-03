@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Optional;
+
 @Controller
 public class ReviewController {
 
@@ -22,19 +23,21 @@ public class ReviewController {
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
+
     @GetMapping("/createReview")
-    public String showCreateReviewPage(Model model){
+    public String showCreateReviewPage(Model model) {
         ReviewDto baseReviewDto = new ReviewDto();
         model.addAttribute("review", baseReviewDto);
         return "createReview";
     }
+
     @PostMapping("/createReview")
     public String createReview(
             @ModelAttribute("review")
             @Valid ReviewDto review,
             BindingResult result
     ) {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "createReview";
         }
 
@@ -49,10 +52,11 @@ public class ReviewController {
         return "redirect:/viewReview";
 
     }
+
     @GetMapping("/review/{reviewId}")
-    public String getReviewById(@PathVariable(value = "reviewId") int reviewId, Model model){
+    public String getReviewById(@PathVariable(value = "reviewId") int reviewId, Model model) {
         Optional<Review> optionalReview = reviewService.findById(reviewId);
-        if(optionalReview.isEmpty()){
+        if (optionalReview.isEmpty()) {
             return "error";
         }
         Review review = optionalReview.get();
